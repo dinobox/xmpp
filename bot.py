@@ -63,10 +63,10 @@ class EchoBot(ClientXMPP):
                 pic_file_name="/home/pi/pics/%s.jpg" % (timestamp)
                 system("fswebcam %s" % (pic_file_name))
                 #base64_content=base64.b64encode(open(pic_file_name).read())
-                img_url=popen("curl -F 'file=@%s;filename=%s.jpg;type=image/jpeg' http://47.94.252.38:3000/upload" %(pic_file_name,timestamp)).read()
+                img_url=popen("curl -F 'file=@%s;filename=%s.jpg;type=image/jpeg' http://47.52.16.64:3000/upload" %(pic_file_name,timestamp)).read()
                 #img_url="data:image/x-icon;base64,%s" % (base64_content)
                 #retxt="<image xmlns='http://mangga.me/protocol/image' type='image/jpeg'>%s</image>" % (base64_content)
-                retxt="http://47.94.252.38:3000%s" % (img_url)
+                retxt="http://47.52.16.64:3000%s" % (img_url)
             if(txt=="关机"):
                 retxt="正在关机"
             if(txt=="开灯"):
