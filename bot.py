@@ -76,7 +76,8 @@ class EchoBot(ClientXMPP):
                 GPIO.output(pin,GPIO.LOW)
                 retxt="已关闭"
             if(txt[0:1]=="#"):
-                cmd=txt[1:len(txt)]
+                #cmd=txt[1:len(txt)]
+                cmd=txt.split("#")[1]
                 retxt=popen(cmd).read()
             msg.reply("\n%s" % retxt).send()
 
